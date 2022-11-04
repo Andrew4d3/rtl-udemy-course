@@ -1,8 +1,22 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, fireEvent } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("button has correct initial color", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  const colorButton = screen.getByRole('button', { name: "Change to blue" });
+
+  expect(colorButton).toHaveStyle({backgroundColor: 'red'})
 });
+
+/*
+  What are we doing here?
+  1. Rendering the app
+  2. In the screen, getting the element which role is "button"
+  3. Expecting that element we retrive in the last step to have a background color of red
+*/
+
+test("button turns blue when clicked", () => {
+
+})
+
