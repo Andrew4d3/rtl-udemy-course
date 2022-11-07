@@ -14,14 +14,13 @@ test("button has correct initial color and updates when clicked", () => {
   expect(colorButton).toHaveTextContent('Change to red');
 });
 
-/* 
-What are we doing here?
+test("initial conditions", () => {
+  render(<App />);
 
-1. Rendering the app
-2. Getting element to be tested using getByRole
-3. Asserting that element has correct backgroundColor
-4. Clicking element
-5. Asserting that element has changed its color to "blue"
+  const colorButton = screen.getByRole('button', { name: "Change to blue"});
+  expect(colorButton).toBeEnabled();
 
-*/
+  const checkbox = screen.getByRole('checkbox');
+  expect(checkbox).not.toBeChecked();
+});
 
