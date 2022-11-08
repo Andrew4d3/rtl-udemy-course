@@ -5,11 +5,11 @@ function App() {
   const [disabled, setdisabled] = useState(false);
 
   const newButtonColor = buttonColor === "red" ? "blue" : "red";
-
+  
   return (
     <div>
       <button
-        style={{ backgroundColor: buttonColor, color: "white" }}
+        style={{ backgroundColor: disabled ? "gray" : buttonColor }}
         onClick={() => setButtonColor(newButtonColor)}
         disabled={disabled}
       >
