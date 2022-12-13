@@ -34,7 +34,7 @@ test("Order phases for happy path", async () => {
   const summaryHeading = screen.getByRole("heading", { name: "Order Summary" });
   expect(summaryHeading).toBeInTheDocument();
 
-  const scoopsHeading = screen.getByRole("heading", { name: "Scoops: $6.00" });
+  const scoopsHeading = screen.getByRole("heading", { name: "Scoops: $24.00" });
   expect(scoopsHeading).toBeInTheDocument();
 
   const toppingsHeading = screen.getByRole("heading", {
@@ -45,7 +45,6 @@ test("Order phases for happy path", async () => {
   // check summary option items
   expect(screen.getByText("1 Vanilla")).toBeInTheDocument();
   expect(screen.getByText("2 Chocolate")).toBeInTheDocument();
-  expect(screen.getByText("Cherries")).toBeInTheDocument();
 
   // // alternatively...
   // // const optionItems = screen.getAllByRole('listitem');

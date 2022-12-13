@@ -17,7 +17,7 @@ test("handles error for scoops and toppings routes", async () => {
     })
   );
 
-  render(<OrderEntry />);
+  render(<OrderEntry setOrderPhase={jest.fn()} />);
 
   // Explain what await for does
   await waitFor(async () => {
